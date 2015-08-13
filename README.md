@@ -12,10 +12,14 @@ Time Series Analysis (https://github.com/ceholden/yatsm).
 2. For Landsat 4,5, 7 and 8 data
 	Extract >> Stack >> Subset
 
+3. Order of use 
+	a. extractAll.py sample command sudo python extractAll.py
+	b. extractAllMetadata.py command sudo python extractAllMetadata.py
 For mote details refer description in respective script.
+---------------------------------------------------------------------------------------------------
 
 # Author
 ---------------------------------------------------------------------------------------------------
 Name: Suryakant Sawant (suryakant54321@gmail.com)
 Date: 13 August, 2015
-
+---------------------------------------------------------------------------------------------------

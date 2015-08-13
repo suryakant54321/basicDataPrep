@@ -1,3 +1,21 @@
-# basicDataPrep
-Basic Data Preperation stuff with OS Geo tools in python.
-The complete description to use this script for time series data preperation will be added very soon.
+## basicDataPrep
+===================================================================================================
+To automate the directory and file structure for pixel based 
+Time Series Analysis (https://github.com/ceholden/yatsm).
+
+
+# Objectives
+---------------------------------------------------------------------------------------------------
+1. To prepare directory structure for module
+	https://github.com/ceholden/yatsm
+
+2. For Landsat 4,5, 7 and 8 data
+	Extract >> Stack >> Subset
+
+For mote details refer description in respective script.
+
+# Author
+---------------------------------------------------------------------------------------------------
+Name: Suryakant Sawant (suryakant54321@gmail.com)
+Date: 13 August, 2015
+

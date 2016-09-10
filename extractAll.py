@@ -44,7 +44,7 @@
 import os, re, gdal
 import shutil
 # 
-os.chdir("/media/opengeo-vm/surya2/5_timeSeriesAnalysis")
+os.chdir("/home/agrolab/Desktop/tc_work/rasterData/proc")
 # Extract all
 def extract():
 	allFiles = os.listdir("0_sourceData/")
@@ -112,7 +112,7 @@ def stackFor(extractedDir):
 	##---------
 	# subset
 	print "start subset"
-	SHPpath = "0_sourceData/studyShapeFile/testSite.shp"
+	SHPpath = "/home/agrolab/Desktop/tc_work/rasterData/subsetLayer/ProjLuLcSelTaluk.shp"
 	# gdal_translate -a_nodata 0 -projwin 8656046.82624 2466649.9095 8732510.15897 2398831.92847 /input/dir/file.tif /output/dir/file.tif
 	# xMin,yMin 1974709.37,2118929.96 : xMax,yMax 2046369.22,2180790.55
 	# 	

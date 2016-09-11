@@ -33,7 +33,7 @@ import os, re, gdal
 import shutil, time
 # Your project path
 print (os.getcwd())
-os.chdir("/media/opengeo-usb/surya2/")
+os.chdir("/home/agrolab/Desktop/tc_work/rasterData/proc/")
 print (os.getcwd())
 # Select only TOA Band for perticular list of files
 def selectTOA(outFiles):
@@ -54,13 +54,14 @@ def selectTOA(outFiles):
 	return(filEid)
 
 # data path
-dataDir = "suryaWork/work/8_thermalData/0_sourcedata/thermalNmSAVI"
-outDir = "suryaWork/work/8_thermalData/1_extract"
-subsetDir = "suryaWork/work/8_thermalData/3_subset"
-oldStack = "5_timeSeriesAnalysis/1_extract"
-stackDir = "suryaWork/work/8_thermalData/2_stack"
+dataDir = "0_sourceData/thermal_n_mSAVI"
+outDir = "1_extract"
+subsetDir = "3_1_subset_thermal"
+oldStack = "3_subset"
+stackDir = "2_stack"
+stTime = time.time()
 def inOutDir(dataDir, outDir):
-	SHPpath = "5_timeSeriesAnalysis/0_sourceData/studyShapeFile/testSite.shp"
+	SHPpath = "4_shapeFiles/subsetLayer/ProjLuLcSelTaluk.shp"
 	allFiles = os.listdir(dataDir) 
 	count = 0
 	stTime = time.time()
@@ -91,7 +92,8 @@ def inOutDir(dataDir, outDir):
 						print ("Subset complete")
 						# Stack
 						# 1
-						oldStackFile = ("%s/%s/subset_%s.tif")%(oldStack, extractedDir, extractedDir)
+						#oldStackFile = ("%s/%s/subset_%s.tif")%(oldStack, extractedDir, extractedDir)
+						oldStackFile = ("%s/subset_%s.tif")%(oldStack, extractedDir)
 						#print (oldStackFile)
 						# 2
 						newStackDir = ("%s/%s")%(stackDir, extractedDir)
@@ -99,7 +101,7 @@ def inOutDir(dataDir, outDir):
 						newStackFile = ("%s/Subset_%s.tif")%(stackDir, extractedDir)
 						stackCmd = ("gdal_merge.py -n 0 -a_nodata 0 -separate -of GTiff -o %s %s %s/subset_%s.tif")%(newStackFile, oldStackFile, subsetDir, extractedDir)
 						try:
-							#print (stackCmd)
+							print (stackCmd)
 							os.system(stackCmd)
 							print("stack complete ")
 							# Delete extracted files

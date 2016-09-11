@@ -112,7 +112,7 @@ def stackFor(extractedDir):
 	##---------
 	# subset
 	print "start subset"
-	SHPpath = "/home/agrolab/Desktop/tc_work/rasterData/subsetLayer/ProjLuLcSelTaluk.shp"
+	SHPpath = "/home/agrolab/Desktop/tc_work/rasterData/proc/4_shapeFiles/subsetLayer/ProjLuLcSelTaluk.shp"
 	# gdal_translate -a_nodata 0 -projwin 8656046.82624 2466649.9095 8732510.15897 2398831.92847 /input/dir/file.tif /output/dir/file.tif
 	# xMin,yMin 1974709.37,2118929.96 : xMax,yMax 2046369.22,2180790.55
 	# 	
@@ -130,7 +130,7 @@ def stackFor(extractedDir):
 	# remove stack file
 	stackPath = ("2_stack/Stack_%s.tif")%(extractedDir)
 	try:
-		os.remove(stackPath) # :)
+		#os.remove(stackPath) # :)
 		print("deteting stacked file stack_%s.tif")%(extractedDir)
 	except:
 		print("error in deteting stacked file stack_%s.tif")%(extractedDir)
